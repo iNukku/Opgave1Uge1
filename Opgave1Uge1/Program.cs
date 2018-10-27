@@ -17,11 +17,20 @@ namespace Opgave1Uge1
             try
             {
                 birthyear = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("You are " + (currentyear - birthyear) + " years old !!!");
+
+                if (currentyear-birthyear >= 18)
+                {
+                    Console.WriteLine("Du er gammel nok!!");
+                }
+                else
+                {
+                    Console.WriteLine("Vent et par år!!!");
+                }
             }
-            catch (Exception)
+            catch (FormatException e)
             {
                 Console.WriteLine("Woops something went wrong!!!");
+                Console.WriteLine(e.Message);
             }
 
 
